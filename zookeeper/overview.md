@@ -40,7 +40,10 @@ zookeeper消息协议为原子的，所以本地的副本不存在分歧。
 tickTime=2000
 dataDir=/var/lib/zookeeper
 clientPort=2181
-```
-tickTime:the basic time unit in milliseconds used by ZooKeeper. It is used to do heartbeats and the minimum session timeout will be twice the tickTime.
-dataDir:the location to store the in-memory database snapshots and, unless specified otherwise, the transaction log of updates to the database.
-clientPort:the port to listen for client connections
+``` 
+tickTime:心跳时间，单位毫秒
+dataDir:内存数据库
+clientPort:链接端口
+
+# 管理zookeeper存储
+长时间运行的生产系统必须管理dataDir 和log
