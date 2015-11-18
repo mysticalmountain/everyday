@@ -14,7 +14,7 @@ zookeeper的每个更新都有一个戳记，它反映了所有zookeepr所有事
 ## 数据模型和分层次的命名空间
 ![zknamespace](./images/zknamespace.jpg)
 ## 节点和短暂的节点
-znode有子znode，每个znode可以存储数据，例如：状态信息、配置、本地信息、环境信息。存储在节点的数据通常比较小，大小为1024byte。
+znode有子znode，每个znode可以存储数据，例如：状态信息、配置、本地信息、环境信息。存储在节点的数据通常比较小，大小为1M。
 znode的结构包含版本的改变。每个节点有访问控制列表（ACL）,列出谁能做什么。
 zookeeper有瞬态znode，节点将一直存在如果session一直存在。session结束节点自动删除。
 ## 更新和监控的条件

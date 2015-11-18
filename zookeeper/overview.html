@@ -1128,6 +1128,7 @@ MathJax.Hub.Config({
 <li><a href="#confzoocfg">conf/zoo.cfg</a></li>
 </ul>
 </li>
+<li><a href="#zookeeper">管理zookeeper存储</a></li>
 </ul>
 </div>
 <h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>概述</h1>
@@ -1145,7 +1146,7 @@ MathJax.Hub.Config({
 <h2 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>数据模型和分层次的命名空间</h2>
 <p><img alt="zknamespace" src="///D://Workspace/note/everyday/zookeeper/images/zknamespace.jpg" /></p>
 <h2 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>节点和短暂的节点</h2>
-<p>znode有子znode，每个znode可以存储数据，例如：状态信息、配置、本地信息、环境信息。存储在节点的数据通常比较小，大小为1024byte。<br />
+<p>znode有子znode，每个znode可以存储数据，例如：状态信息、配置、本地信息、环境信息。存储在节点的数据通常比较小，大小为1M。<br />
 znode的结构包含版本的改变。每个节点有访问控制列表（ACL）,列出谁能做什么。<br />
 zookeeper有瞬态znode，节点将一直存在如果session一直存在。session结束节点自动删除。</p>
 <h2 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>更新和监控的条件</h2>
@@ -1172,6 +1173,8 @@ dataDir=/var/lib/zookeeper
 clientPort=2181
 </pre></div>
 <br />
-tickTime:the basic time unit in milliseconds used by ZooKeeper. It is used to do heartbeats and the minimum session timeout will be twice the tickTime.<br />
-dataDir:the location to store the in-memory database snapshots and, unless specified otherwise, the transaction log of updates to the database.<br />
-clientPort:the port to listen for client connections</p></article></body></html>
+tickTime:心跳时间，单位毫秒<br />
+dataDir:内存数据库<br />
+clientPort:链接端口</p>
+<h1 id="zookeeper"><a name="user-content-zookeeper" href="#zookeeper" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>管理zookeeper存储</h1>
+<p>长时间运行的生产系统必须管理dataDir 和log</p></article></body></html>
