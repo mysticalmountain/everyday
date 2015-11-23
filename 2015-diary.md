@@ -474,3 +474,47 @@ void InsertSort(int[] a, int n) {
  配置管理
  集群管理
  分布式锁
+
+### 2015-11-19
+/master
+/workers
+/assign
+/tasks
+/status
+
+
+
+手续费计算
+记账
+
+两个独立的模块，相互之间无直接依赖
+
+### 2015-11-23
+#### 实时清分改造
+- 交易可以选择性入账，可以灵活的配置规则，（规则考虑多维度）
+入账前检查
+基础：交易类型、交易状态
+业务：通道规则、商户规则
+
+- 考虑监控
+
+
+
+Handler 增加 check list，可以为handler注册多个check，交易前先执行check list
+
+#### UML各种关系说明
+UML中描述对象和类之间相互关系的方式包括：依赖（Dependency），关联（Association），聚合（Aggregation），组合（Composition），泛化（Generalization），实现（Realization）等。
+- [x] 依赖（denpendency）
+元素A的变化会影响元素B，但反之不成立，那么B和A间的关系为依赖，B依赖A；类属关系和实现关系在语义上讲也是依赖关系，但由于其有更特殊的用途，所以被单独描述。uml中用带箭头的虚线表示Dependency关系，箭头指向被依赖元素。
+- [x] 泛化（Generalization）
+通常所说的继承（特殊个体 is kind of 一般个体）关系，不必多解释了。uml中用带空心箭头的实线表示Generalization关系，箭头指向一般个体。
+- [x] 实现（Realize）
+元素A定义一个约定，元素B实现这个约定，则B和A的关系是Realize，B realize A。这个关系最常用于接口。uml中用空心箭头和虚线表示Realize关系，箭头指向定义约定的元素。
+- [x] 关联（Association）
+元素间的结构化关系，是一种弱关系，被关联的元素间通常可以被独立的考虑。uml中用实线表示Association关系，箭头指向被依赖元素。
+- [ ] 聚合（Aggregation）
+关联关系的一种特例，表示部分和整体（整体 has a 部分）的关系。uml中用带空心菱形头的实线表示Aggregation关系，菱形头指向整体。
+- [ ] 组合（Composition）
+组合是聚合关系的变种，表示元素间更强的组合关系。如果是组合关系，如果整体被破坏则个体一定会被破坏，而聚合的个体则可能是被多个整体所共享的，不一定会随着某个整体的破坏而被破坏。uml中用带实心菱形头的实线表示Composition关系，菱形头指向整体。
+
+
