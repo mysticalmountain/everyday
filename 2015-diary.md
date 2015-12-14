@@ -571,6 +571,7 @@ transid
       品牌服务费
         与手续费逻辑一致
     三农  
+      ------------------采用通用规则
       费率设置固定：费率 0.24%封顶值为2.4元
       1. 手续费 = 交易金额 * 费率
       2. 实收手续费 = 手续费 > 封顶值 ？封顶值 : 手续费
@@ -579,11 +580,13 @@ transid
       手续费
         费率设置标扣：交易金额 * 费率
         费率设置定值：X元/笔
-        费率设置封顶：手续费 = 交易金额 > 中间值 ？封顶值 : 交易金额 * 费率 
+        费率设置封顶：手续费 = 交易金额 >= 中间值 ？封顶值 : 交易金额 * 费率 
+        ？确定大于或大于等于中间值
     北京浦发
       手续费
-        与通用手续费计算规则一致，但是手续费非最低金额为0.01元
+        与通用手续费计算规则一致，但是手续费最低金额为0.01元
 交易收入 = 商户基本手续费 + 商户附加手续费 - 通道手续费 - 品牌服务费
+每条交易都需要记录当时商户的通道手续费费率，品牌服务费费率，商户手续费费率，附加手续费费率
 ```
 ##### 消费撤销
 ```
@@ -617,6 +620,28 @@ transid
   
 #### 记账
 - 消费：交易金额、商户手续费、附加手续费、通道手续费（通道成本 + 品牌服务费）。
-- 撤销；同消费
+- 撤销；同消费  
 - 冲正：同消费
 - 退货：同消费
+
+
+
+mvn archetype:create -DgroupId=com.cnepay -DartifactId=boss -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:create -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.ryanote -Dartifact=common
+
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.ryanote -DartifactId=common
+
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.cnepay -DartifactId=cts -Dpackaging=war -Dversion=2.0-snapshot -Dname=ctsn
+
+
+### 2015-12-11
+#### posp
+1. get message MTI
+2. get 41 field 受卡机终端标识码
+3. get 42 field 受卡方标识码
+4. get 60 field 自定义域
+
+
+### 2015-12-14
+
+https://github.com/bedefaced/jpos-example
