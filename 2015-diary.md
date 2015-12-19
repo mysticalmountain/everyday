@@ -645,3 +645,6 @@ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupI
 ### 2015-12-14
 #### JPOS资料
 https://github.com/bedefaced/jpos-example
+
+### 2015-12-19
+ssh -D 7070 -p 114 -N -v freessh@159.203.248.113
