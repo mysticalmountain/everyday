@@ -645,3 +645,15 @@ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupI
 ### 2015-12-14
 #### JPOS资料
 https://github.com/bedefaced/jpos-example
+```sequence
+A ->> B
+```
+
+```sequence
+A -> B
+```
+
+@startuml
+Bob -> Alice : Hello, how are you
+Alice -> Bob : Fine, thank you, and you?
+@enduml
