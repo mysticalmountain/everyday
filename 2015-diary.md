@@ -645,6 +645,7 @@ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupI
 ### 2015-12-14
 #### JPOS资料
 https://github.com/bedefaced/jpos-example
+
 ```sequence
 A ->> B
 ```
@@ -657,3 +658,7 @@ A -> B
 Bob -> Alice : Hello, how are you
 Alice -> Bob : Fine, thank you, and you?
 @enduml
+
+### 2015-12-19
+ssh -D 7070 -p 114 -N -v freessh@159.203.248.113
+>>>>>>> e1c475e31455d2639e8aedc8949f4954332a04c3
