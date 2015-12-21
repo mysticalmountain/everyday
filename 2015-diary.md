@@ -662,3 +662,6 @@ Alice -> Bob : Fine, thank you, and you?
 ### 2015-12-19
 ssh -D 7070 -p 114 -N -v freessh@159.203.248.113
 >>>>>>> e1c475e31455d2639e8aedc8949f4954332a04c3
+
+### 2015-12-21
+http://www.coin163.com/java/cas/cas.html
