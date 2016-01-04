@@ -665,3 +665,16 @@ ssh -D 7070 -p 114 -N -v freessh@159.203.248.113
 
 ### 2015-12-21
 http://www.coin163.com/java/cas/cas.html
+
+### 2015-12-28
+扣分：业务支撑、培训、新技术分享、bug
+
+单点登录初步的demo放到开发环境了
+cas server：http://192.168.1.51:8181/cas/login
+cas cleint 1：http://192.168.1.51:8182/cas-client-1
+cas client 2：http://192.168.1.51:8183/cas-client-2
+
+用户名：casuser
+密码：Mellon
+
+如果要主动退出访问：http://192.168.1.51:8181/cas/logout
