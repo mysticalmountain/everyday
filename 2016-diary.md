@@ -126,6 +126,8 @@ http://jui.org/
 ### 版本库
 svn://115.29.147.186/01.%E7%BD%91%E7%BB%9C%E9%87%91%E8%9E%8D%E9%83%A8
 svn://115.29.147.186/01.网络金融部
+svn://115.29.147.186/阿里云/02.workspace
+
 
 
 ### 技术体系
@@ -148,5 +150,59 @@ demo
 > 访问ZK
 
 
+## 2016-02-04
+
+1.2.需求目标
+	整合电子渠道以创新，(貌似部通顺)
+1.7.12.柜面改造
 
 
+系统层面：依托渠道整合平台
+
+卡片类
+	邦卡、开户、签约
+	借记卡余额查询、开户信息查询、交易明细查询
+	信用卡账单、余额等查询、开户信息查询、账单分期、积分查询
+
+业务预约类
+	预约取号
+	预约大额取款
+	申请办卡
+
+营销类
+	抽奖
+	推荐有礼
+	优惠专区
+	优惠查询
+	答题赢流量
+	天天特惠
+
+查询类
+	网点
+	公告
+
+理财
+	理财、基金购买
+	金融行情
+	存贷利率查询
+
+生活类
+	生活缴费
+	门票类
+	车票类
+	医院挂号
+
+通知类
+	交易提醒
+
+设置类
+	设置某些开关
+
+
+## 2016-02-05
+
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.hdcb.nfd -DartifactId=nfd_common_redis
+
+maven-archetype-quickstart:1.0
+
+mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart:1.0 -DgroupId=com.hdcb.nfd -DartifactId=nfd-common-redis
