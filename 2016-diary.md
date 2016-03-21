@@ -127,6 +127,9 @@ http://jui.org/
 svn://115.29.147.186/01.%E7%BD%91%E7%BB%9C%E9%87%91%E8%9E%8D%E9%83%A8
 svn://115.29.147.186/01.网络金融部
 svn://115.29.147.186/阿里云/02.workspace
+svn://115.29.147.186/%E9%98%BF%E9%87%8C%E4%BA%91/02.workspace
+username:andongxu
+password:
 
 
 
@@ -201,7 +204,6 @@ demo
 
 ## 2016-02-05
 
-mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupId=com.hdcb.nfd -DartifactId=nfd_common_redis
 
 maven-archetype-quickstart:1.0
 
@@ -216,3 +218,111 @@ join ttt
 my modify
 
 my featrue modify
+
+
+## 2016-02-16
+## 外部接口域
+- 银银接口
+- 人行支付
+- 人行横向联调
+- 人行支票影像
+- 中间业务接口
+- 银联接口
+- 同业市场
+- 身份核查
+- SWIFT
+- 短信平台
+- 人行外币支付（新建）
+### 问题
+图标 1 、2 、 3 是吗意思？
+为什么改造？现有系统有什么问题？
+如何改造？是否有初步思路
+是找外部厂商？还是自主开发？
+系统设计和开发是由开发商负责？还是由自己负责？ 不同的方式对工作计划影响很大
+目前系统是否都跑在我们机房？
+2. 确认以下信息
+	开发厂商、开发语言、对接系统、目前由谁负责运维、 	
+
+
+
+
+
+
+
+
+## rocketmq
+
+1.下载程序
+2.tar -xvf alibaba-rocketmq-3.0.7.tar.gz 解压到适当的目录如/opt/目录
+3.启动RocketMQ：进入rocketmq/bin 目录 执行
+<!-- Crayon Syntax Highlighter v2.6.0 -->
+ 
+ 
+
+nohup sh mqnamesrv &
+1
+nohup sh mqnamesrv&
+<!-- [Format Time: 0.0011 seconds] -->
+4.启动Broker，设置对应的NameServer
+<!-- Crayon Syntax Highlighter v2.6.0 -->
+ 
+ 
+
+nohup sh  mqbroker -n "127.0.0.1:9876" &
+1
+nohup sh  mqbroker-n"127.0.0.1:9876"&
+<!-- [Format Time: 0.0010 seconds] -->
+
+
+
+## 2016-02-22
+### ACID
+原子性(Atomicity)
+> 原子性意味着数据库中的事务执行是作为原子。即不可再分，整个语句要么执行，要么不执行。
+
+一致性(Consistency)
+> 一致性,即在事务开始之前和事务结束以后，数据库的完整性约束没有被破坏
+
+理解隔离性（Isolation)
+> 隔离性。事务的执行是互不干扰的，一个事务不可能看到其他事务运行时，中间某一时刻的数据。
+
+持久性（Durability)
+> 持久性，意味着在事务完成以后，该事务所对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。
+
+### 一致性
+> 系统内
+>> 事务、锁
+
+> 系统间
+>> 调单查询：在发现有未知数据时通过查询的方式恢复流水
+>> 对账恢复：T+1针对T日的全量数据进行比对一致性，包括状态、金额等关键信息
+>> 异常恢复：可以和掉单查询互为补充，由下游检测异常并进行恢复
+
+### CAP
+一致性 Consistenc
+可用性 Avalibility
+分区容忍性 Tolerance of network partition
+CAP理论认为三点不可能同时满足，证明如下：
+假设系统出现网络分区为 G1 和 G2 两个部分，在一个写操作 W1 后面有一个读操作 R2 ， W1 写 G1 ， R2 读取 G2 ，由于 G1 和 G2 不能通信，如果读操作 R2 以终结的话，必定不能读取写操作 W1 的操作结果。
+
+
+### GAPS
+GAPS即General Application Preposed System，综合应用前置系统，简称大前置系统。
+各种交易发起渠道集中、统一的中间接入系统，把各种终端设备的前置系统和外围系统与银行业务主机系统分离，在系统上集中实现到相关的不同业务子系统的交易路由，是银行开展一般业务交易发起终端和后台帐务主机间的枢纽控制主机。
+
+## 2016-03-02
+
+层次清晰
+职责分明
+容易扩展
+不同技能的开发人员有不同职责（如UED和程序员）## 2016-03-02
+
+在首席架构师眼里，架构的本质是……
+http://www.oschina.net/news/71136/nature-of-architecture
+
+## 2016-03-07
+### 柔性事务
+- 两阶段型
+- 补偿型
+- 异步确保型
+- 最大努力通知型
